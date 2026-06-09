@@ -1,0 +1,35 @@
+name: Multi-Platform Testing
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ubuntu-job:
+    name: Linux platform testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step-one
+        uses: actions/checkout@v4
+      - name: Step-two
+        run: ls -1
+      - name: Step-three
+        run: pwd
+
+  windows-job:
+    name: Windows platform testing
+    runs-on: windows-latest
+    steps:
+      - name: Step-one
+        uses: actions/checkout@v4
+      - name: Step-two
+        run: dir
+
+  macos-job:
+    name: Mac platform testing
+    runs-on: macos-latest
+    steps:
+      - name: Step-one
+        uses: actions/checkout@v4
+      - name: Step-two
+        run: pwd
